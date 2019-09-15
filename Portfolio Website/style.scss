@@ -1,0 +1,177 @@
+$dark:#101016;
+$accent:#f72a56;
+$light: #FFF;
+$dim: lighten($dark,15%);
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color:$dark;
+  margin:0px;
+}
+.flex-row {
+  display:flex;
+  flex-flow:row;
+  align-items: center;
+}
+.flex-column {
+  display:flex;
+  flex-flow:column;
+}
+.upper {
+  padding:80px;
+  & .logo {
+    width:64px;
+  }
+  & .group {
+    margin:0px 60px;
+  }
+  & .title {
+    font:bold 18px 'Poppins';
+    color:#FFF;
+  }
+  & .subtitle {
+    font:bold 16px 'Poppins';
+    color:$dim;
+  }
+  & nav.menu {
+    font: 16px 'Poppins';
+    & .nav-item {
+      position:relative;
+      color:$dim;
+      padding:20px 40px;
+      cursor:pointer;
+      &:hover {
+        color:lighten($dim,25%);
+      }
+      &:after {
+        content:'';
+        position:absolute;
+        width:0px;
+        transition:all 0.2s;
+      }
+      &:before {
+        content:'';
+        position:absolute;
+        width:80px;
+        bottom:-50px;
+        left:10px;
+        height:0px;
+        background-color:$dim;
+        opacity:0.2;
+        transform: skewX(-10deg);
+        transition:all 0.2s;
+      }
+      &.active {
+        color:$accent;
+        &:after {
+          bottom:0px;
+          left:50%;
+          width:30px;
+          height:1px;
+          transform: translate(-50%);
+          background-color:$accent;
+        }
+      }
+      &:hover {
+        &:before {
+          height:200px;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  overflow: hidden;
+  & .project {
+    width:100vw;
+    height:100vh;
+    position:relative;
+    & .demo {
+      position: absolute;
+      max-width:1000px;
+      box-shadow:0px 10px 30px rgba(0,0,0,0.4);
+      &.small {
+        max-width:800px;
+        height:90%;
+        margin:40px;
+      }
+    }
+    & .counter {
+      top:100px;
+      font:bold 16px 'Poppins';
+      position:absolute;
+      padding:20px;
+      width:60px;
+      height:60px;
+      text-align: center;
+      color:$accent;
+      background-color:darken($dim,10%);
+      border-radius:100%;
+    }
+    & .bigtext {
+      position:absolute;
+      font:150px 'Poppins';
+      line-height: 1em;
+      color:darken($dim,10%);
+      width:100px;
+      top:100px;
+    }
+    & .label {
+      position:absolute;
+      font:bold 24px 'Poppins';
+      padding:15px 30px;
+      border-radius:4px;
+      box-shadow:0px 2px 10px rgba(0,0,0,.2);
+      color:#FFF;
+      top:300px;
+    }
+    &.right {
+      & .demo {
+        right:0px;
+      }
+      & .counter {
+        left:80px;
+      }
+      & .bigtext {
+        padding:100px 60px;
+      }
+      & .label {
+        left:90px;
+      }
+    }
+    &.left {
+      & .demo {
+        left:80px;
+      }
+      & .counter {
+        right:80px;
+      }
+      & .bigtext {
+        line-height: 1em;
+        padding:100px 60px;
+        right:600px;
+      }
+      & .label {
+        right:300px;
+      }
+    }
+  }
+  & .slice {
+    position:absolute;
+    top:0px;
+    height:100%;
+    width:100px;
+    transform: skewX(-30deg);
+  }
+  & .bigslice {
+    position:absolute;
+    top:0px;
+    right:0px;
+    height:100%;
+    background-color:$light;
+    width:500px;
+    transform: skewX(-30deg)
+  }
+}

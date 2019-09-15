@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <title>Air-Max</title>
+    <meta charset="utf-8" />
+    <link rel=stylesheet type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/parallax.js-1.4.2/parallax.js"></script>
+</head>
+
+<body>
+    <div class="upper_cont">
+        <button id="table" href="#table">Enable Table</button>
+        <img class="logo centered" src="img/airburnmaxwhite.svg " width="400"></img>
+        <h1 class="bg_text">AirBurnMax</h1>
+        <h4 class="sub_text">High Altitude Pogo Experience</h4>
+        <p class="text">Best in the business providing the pogo experience of a lifetime. The company was founded on the ideals that the sky is not our limit, so enjoy the highest peaks you can get with the finest pogo sticks</p>
+    </div>
+    <div class="bottom_cont">
+
+        <img class="bg" src="img/Paint-Splatter-psd107336.png"></img>
+        <div class='card-container'>
+            <div class="card">
+                <p class="name">Flybar Master Pogo Stick</p>
+                <div class="type">Medium</div>
+                <img class="display_image" src="img/Pogo/flybarmaster.jpeg"></img>
+                <p class="desc">An easy to use, easy to assemble goto when it comes to the arts of the pogo</p>
+                <button class="add">Add to Cart</button>
+            </div>
+            <div class="card">
+                <p class="name">JackHammer Pogo Jumper</p>
+                <div class="type">Light</div>
+                <img class="display_image" src="img/Pogo/JackhammerPogoJumper.jpg"></img>
+                <p class="desc">An easy to use, easy to assemble goto when it comes to the arts of the pogo</p>
+                <button class="add">Add to Cart</button>
+            </div>
+            <div class="card">
+                <p class="name">FlyBar Super Pogo</p>
+                <div class="type">Medium</div>
+                <img class="display_image" src="img/Pogo/FlybarSuper.jpeg"></img>
+                <p class="desc">An easy to use, easy to assemble goto when it comes to the arts of the pogo</p>
+                <button class="add">Add to Cart</button>
+            </div>
+            <div class="card">
+                <p class="name">Flybar Super Pogo Stick</p>
+                <div class="type">Stiff</div>
+                <img class="display_image" src="img/Pogo/FlybarSuperAlternate.jpeg"></img>
+                <p class="desc">An easy to use, easy to assemble goto when it comes to the arts of the pogo</p>
+                <button class="add">Add to Cart</button>
+            </div>
+        </div>
+
+    <!--Table HTML-->
+        <table class="data-table">
+            <tr>
+                <th>Model #</th>
+                <th>Owner's Name</th>
+                <th>Max Height</th>
+                <th>Flight Time</th>
+            </tr>
+            <tr>
+                <td rowspan="4">Model X</td>
+                <td>Steve</td>
+                <td>10m</td>
+                <td>10s</td>
+            </tr>
+            <tr>
+                <td>Samat</td>
+                <td>62m</td>
+                <td>150s</td>
+            </tr>
+            <tr>
+                <td>Jeff</td>
+                <td>16m</td>
+                <td>120s</td>
+            </tr>
+            <tr>
+                <td>Robert</td>
+                <td>12m</td>
+                <td>6s</td>
+            </tr>
+            <tr>
+                <td rowspan="4">Model Y</td>
+                <td>Steve</td>
+                <td>10m</td>
+                <td>10s</td>
+            </tr>
+            <tr>
+                <td>Samat</td>
+                <td>9m</td>
+                <td>30s</td>
+            </tr>
+            <tr>
+                <td>Jeff</td>
+                <td>7m</td>
+                <td>16s</td>
+            </tr>
+            <tr>
+                <td>Robert</td>
+                <td>4m</td>
+                <td>4s</td>
+            </tr>
+            <tr>
+                <td colspan="2">Overall Maximums:</td>
+                <td>19m</td>
+                <td>10s</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        $('.upper_cont').parallax({
+            imageSrc: 'img/mountains.jpeg'
+        });
+        $(document).scroll(function () {
+            if ($(document).scrollTop() >= $(window).height()) {
+                $('.logo').addClass("left");
+                $('.logo').attr("src", "img/airburnmax.svg");
+            } else {
+                $('.logo').removeClass("left");
+                $('.logo').attr("src", "img/airburnmaxwhite.svg");
+            }
+        });
+        $("#table").click(function(){
+            $('.data-table').toggleClass("show")
+        });
+    </script>
+</body>
+
+</html>
